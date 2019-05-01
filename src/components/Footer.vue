@@ -8,7 +8,7 @@
       flat
       tile
     >
-      <v-card-title class="teal">
+      <v-card-title class="blue darken-1">
         <strong class="subheading">Address!</strong>
 
         <v-spacer></v-spacer>

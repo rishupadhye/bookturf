@@ -1,7 +1,10 @@
 <template>
   <v-app class="grey lighten-3">
     <NavBar />
-    <Jumbotron />
+      <router-view>
+        
+      </router-view>
+   
     <Footer />
   </v-app>
 </template>
@@ -9,10 +12,10 @@
 <script>
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
-import Jumbotron from '@/components/Jumbotron'
+
 export default {
   name: 'App',
-  components: { NavBar, Jumbotron, Footer },
+  components: { NavBar, Footer },
   data () {
     return {
       //
