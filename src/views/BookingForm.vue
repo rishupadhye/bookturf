@@ -12,7 +12,8 @@
                     :counter="10"
                     label="Name"
                     light
-                    required>
+                    required
+                    clearable>
                     </v-text-field>
 
 
@@ -21,7 +22,9 @@
                     v-model="contact_number"
                     :counter="10"
                     label="Contact Number"
-                    required> 
+                    required 
+                    clearable
+                    > 
                     </v-text-field>
                     
                     
@@ -57,7 +60,8 @@
                     </v-layout>
 
                     <!-- TIME PICKER  -->
-                    <v-layout row  wrap>
+
+                    <!-- <v-layout row  wrap>
                     <v-flex xs12>
                     <v-menu
                         ref="menu"
@@ -120,16 +124,20 @@
                         @click:minute="$refs.menu.save(time)"
                         ></v-time-picker>
                     </v-menu>
-                    </v-flex>
+                    </v-flex> -->
                     <v-spacer></v-spacer>
-
+                    <v-layout>
+                        <v-flex>
+                            <SelectSlot />
+                        </v-flex>
+                    </v-layout>
                     <!-- SUBMIT BUTTON -->
                     <v-layout>
                         <v-flex>
                             <v-btn color="primary" @click="addentry">SUBMIT</v-btn>
                         </v-flex>
                     </v-layout>
-                </v-layout>
+            
                 </form>             
             </v-layout>
          </v-card>
@@ -144,9 +152,12 @@
 </template>
 
 <script>
+import SelectSlot from '@/components/SelectSlot'
 import db from '@/firebase'
+
 export default {
     name:'bookingform',
+    components:{SelectSlot},
     data: () => ({
         arrayEvents: null,
         date: new Date().toISOString().substr(0, 10),
